@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Hydration Reminder</string>
+    <string name="instruction">Press the glass of water after you\'ve hydrated</string>
+    <string name="hydrate_while_charging_reminder_sent_text">Hydrate while charging reminder sent %1$d</string>
+    <string name="hydrate">hydrate</string>
+    <string name="hydrate_counter_text">Hydrated %1$d times</string>
+
+    <plurals name="charge_notification_count">
+        <item quantity="zero">Hydrate while charging reminder sent %d times</item>
+        <item quantity="one">Hydrate while charging reminder sent %d time</item>
+        <item quantity="other">Hydrate while charging reminder sent %d times</item>
+    </plurals>
+</resources>
