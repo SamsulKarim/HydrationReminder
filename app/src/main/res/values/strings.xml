@@ -4,6 +4,7 @@
     <string name="hydrate_while_charging_reminder_sent_text">Hydrate while charging reminder sent %1$d</string>
     <string name="hydrate">hydrate</string>
     <string name="hydrate_counter_text">Hydrated %1$d times</string>
+    <string name="notification_channel_name">reminder notification channel</string>
 
     <plurals name="charge_notification_count">
         <item quantity="zero">Hydrate while charging reminder sent %d times</item>

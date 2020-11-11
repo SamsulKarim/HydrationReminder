@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hydrationreminder.sync.WaterReminderIntentService;
+import com.example.hydrationreminder.utilities.NotificationUtils;
 import com.example.hydrationreminder.utilities.PreferenceUtilities;
 import com.example.hydrationreminder.utilities.ReminderTasks;
 
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView mChargingCountDisplay, mWaterCountDisplay;
 
-    private Button hydrate_button;
+    private Button hydrate_button, notifyButton;
     private Toast mToast;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mWaterCountDisplay = findViewById(R.id.water_count_text);
         hydrate_button = findViewById(R.id.hydrate_button);
         hydrate_button.setOnClickListener(this);
+        notifyButton = findViewById(R.id.notify_button);
+        notifyButton.setOnClickListener(this);
 
         updateWaterCount();
         updateChargingReminderCount();
@@ -64,7 +67,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        incrementWater(view);
+
+        if(view == hydrate_button){
+            incrementWater(view);
+        }
+
+        if( view == notifyButton){
+
+            NotificationUtils.remindUsersBecauseCharging(this);
+        }
+
     }
 
     @Override
